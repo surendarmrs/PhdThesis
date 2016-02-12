@@ -1,0 +1,40 @@
+\chapter{HimSAR: A Snowpack Parameters Estimation Toolbox}
+
+\section{Introduction}
+HimSAR (the word \textit{hima} means snow in Sanskrit) is an endogenous snowpack parameters estimation and standalone toolbox containing the novel methodologies developed during this doctoral study. Apart from this it also contains the conventional SAR data processing algorithms and the widely used decomposition methodologies available in the literature. Moreover, it also contains algorithms for snowpack parameters estimation from single, dual and full- polarimetric SAR data. 
+
+\section{Functionalities}
+Many pre and post-processing steps are included along with the snowpack parameter estimation algorithms in this HimSAR toolbox.
+
+\begin{itemize}
+	\item Single look complex PolSAR data can be directly imported to this tool. Presently ALOS PALSAR-1, ALOS PALSAR-2, Radarsat-2 and TerraSAR-X data (dual/full polarimetry)  can be used in this toolbox. 
+	\item It has a functionality to suggest a multi-looking factor based on the range and azimuth pixel spacing and incidence angle. It directly generates a ${[\mbox{T}_3]}$ or ${[\mbox{C}_3]}$ for full polarimetric data and ${[\mbox{C}_2]}$ for dual polarimetric data. This tool box also contains a speckle filters for preprocessing of the SAR data.
+	\item The standard model based polarimetric decomposition techniques ~\citep{freeman98,Yamaguchi2005,singh13,bhattacharya2015adaptive} are also included in this tool box. 
+	\item Most importantly the snowpack parameter estimation algorithms: snow wetness ~\citep{Shi95wetness,surendar2015snowwetness,bhattacharya2014snow}, snow density ~\citep{Shi2000,surendar2015snowdensity} and snow surface dielectric constant estimation algorithms described in this thesis~\cref{sec:3.1} are also included in this toolbox. Screen shots for these options are shown in Figure~\ref{fig:HimSAR1},~\ref{fig:HimSAR2} and ~\ref{fig:HimSAR3}.
+	\item Snow cover estimation algorithm developed in~\cite{singh2012a} is also included as a sub-feature.  
+\end{itemize}
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=\columnwidth]{Figure_General/HimSAR1.png}
+	\caption{HimSAR tool box for snow wetness} 
+	\label{fig:HimSAR1}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=\columnwidth]{Figure_General/HimSAR2.png}
+	\caption{HimSAR tool box for snow density} 
+	\label{fig:HimSAR2}
+\end{figure}
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=\columnwidth]{Figure_General/HimSAR3.png}
+	\caption{HimSAR tool box for snow surface dielectric} 
+	\label{fig:HimSAR3}
+\end{figure}
+
+\section{Technical Description}
+
+This software is controlled through a graphical user interface (GUI) written in Microsoft Visual C++.Net (MSVC or VC++). MSVC is a programming environment used to create graphical user interface (GUI) applications for the Microsoft Windows family of operating systems. HimSAR software is basically an MFC (Microsoft Foundation Classes) Application developed under Visual Studio 2010.  The MFC is used for creating Windows Applications.  The MFC provides a common application programming interface (API) for Windows programs.  It provides all of the features we expect from a Windows program: menus, minimize and maximize buttons, text boxes, checkboxes, list boxes, combo boxes, radio buttons, graphics and multimedia.  The MFC Library saves a programmer time by providing code that has already been written. It also provides an overall framework for developing the application program.
+
+HimSAR software contains one common single document interface (SDI) mainframe window. This window incorporates title bar, menu bar, status bar and dialogs. The dialog will be displayed when the end user triggered the menu in menu bar. In the dialog box, multithreading technology is implemented in order to speed up the execution of the process while handling large images. Multithreading is an ability of a platform (Operating System, Virtual Machine  etc.) or application to create a process that consists of multiple threads of execution (threads). A thread of execution is the smallest sequence of programming instructions that can be managed independently by a scheduler. These threads can run in parallel which can increase the efficiency of programs. Multithreading is used when the parallel execution of some tasks leads to a more efficient use of resources of the system. This software has many user defined functions which can be re-used. Also pointers and array in C++ have been implemented for the dynamic memory allocation and deallocation for huge images. It will reduce the processing time and handle the system resources efficiently. For executing the HimSAR software in end user system, the components like .Net Framework 4.0 should be installed.

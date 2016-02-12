@@ -1,0 +1,198 @@
+% thesis.tex
+%
+% This file is root file for an example thesis written using the
+% IIT Bombay LaTeX Style file.
+% Created by Amey Karkare (21 June 2007)
+%
+% It is provided without warranty on an AS IS basis.
+
+%=====================================================================
+% Read: http://www.cse.iitb.ac.in/karkare/iitbthesis/
+%    FAQ.txt     for frequently asked quetions
+%    Changes.txt for changes
+%    README      for more information
+%=====================================================================
+
+%=====================================================================
+% DOCUMENT STYLE
+%=====================================================================
+% IITB PhD Thesis format default settings are:
+%   12pt, one-sided printing on a4 size paper
+\documentclass{iitbthesis}
+% For two-sided printing, with Chapter starting on odd-numbered pages,
+% use the following line instead:  
+%\documentclass[openright,twoside]{iitbthesis}
+%\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}
+%\cleardoublepage}}
+\setcounter{secnumdepth}{3}
+%\setcounter{tocdepth}{3}
+
+%=====================================================================
+% OPTIONAL PACKAGES
+%=====================================================================
+% To include optional packages, use the \usepackage command.
+% For e.g., The package epsfig is used to bring in the Encapsulated
+%    PostScript figures into the document.
+%    The package times is used to change the fonts to Times Roman;
+%=====================================================================
+
+\usepackage{epsfig}
+\usepackage{fancyhdr}
+%\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage{amssymb}
+\usepackage{amsmath,epsfig}
+\usepackage{graphicx,graphics}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[capitalise]{cleveref}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{natbib}
+\usepackage{float,rotating,pdflscape}
+\renewcommand\bibname{References}
+%\usepackage{acronym}
+%\usepackage{sectsty}
+%\chapterfont{\centering}
+%\chaptertitlefont{\centering}
+\usepackage{titlesec}
+%\titleformat{\chapter}[display]
+%  {\normalfont\huge\bfseries\centering}
+%  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+
+
+
+%=====================================================================
+%  Single counter for theorems and theorem-like environments:
+%=====================================================================
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{assertion}[theorem]{Assertion}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{figger}[theorem]{Figure}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+
+%=====================================================================
+% End of Preamble, start of document
+%
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+%******************************************
+\newcommand{\captionfonts}{\footnotesize}
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
+
+%******************************************
+\fancyhead{}
+
+\makeglossary
+\def\blfootnote{\xdef\@thefnmark{}\@footnotetext}% This makes un-numbered footnotes
+
+\belowcaptionskip=3mm
+
+\begin{document}
+
+%=====================================================================
+% Include the prelude for Title page, abstract, table of contents, etc
+% You need to modify it to contain your details
+\include{prelude}
+%\include{abbreviations}
+\newpage
+\setlength{\parskip}{2.5mm}
+\titlespacing{\chapter}{0cm}{55mm}{10mm}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\centering}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+  
+  \titlespacing*{\section}
+  {0pt}{8mm}{8mm}
+  \titlespacing*{\subsection}
+  {0pt}{8mm}{8mm}
+  
+\cleardoublepage\pagenumbering{arabic}
+\fancyhead[RO,RE]{\footnotesize{\em \leftmark}}
+%=====================================================================
+% Include the technical part of the report
+%%\include{chap_intro}             % Chapter 1: Introduction
+\include{chap_01_Introduction}
+%\include{chap_02_Review_of_literature}
+%\include{chap_03_Objective,_Data_and_Methodology} 
+%\include{chap_04_Experiments_and_Analysis} 
+%\include{chap_05_Summary_of_Results_and_Discussions}
+%\include{chap_06_List_of_Publications}       % Finally the summary & conclusions
+
+%=====================================================================
+% APPENDIX
+%  Appendices, if any, must precede the cited literatures.
+%  Appendices shall be numbered in Roman Capitals (e.g. Appendix IV)
+
+%% \appendix
+%% \include{appendix_something}          
+
+%=====================================================================
+% BIBLIOGRAPHY
+%   This should follow the appendices, if any, otherwise summary and
+%   conclusions chapter.
+% Choose your bibliography style
+% plain is the basic style, others include ieeetr, siam, asm, etc
+\addcontentsline{toc}{chapter}{References}
+%\bibliographystyle{ametsoc}
+
+\newpage
+\setlength{\parskip}{5mm}
+\titlespacing{\chapter}{0cm}{0mm}{0mm}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+\bibliographystyle{pjgsm}
+% Add the bib file
+\bibliography{APSDatabase}
+
+%=====================================================================
+% PUBLICATIONS
+%  publications if any may be listed after the literature cited.
+\addcontentsline{toc}{chapter}{List of Publications}
+\include{chap_06_List_of_Publications}
+
+%=====================================================================
+% ACKNOWLEDGMENTS
+%   This is the last item in the thesis. It should be signed by
+%   author, with date.
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+\newpage
+\setlength{\parskip}{5mm}
+\titlespacing{\chapter}{0cm}{0mm}{0mm}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries \centering}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+\begin{acknowledgments}
+\vspace{10mm}
+I wish to record deep sense of gratitude to Prof. S. S. Gedam, for his valuable guidance and constant support at all stages of study. My special thankfulness goes to Prof. Y. S. Rao and Prof. Malay Mukul for their encouragement to proceed for the research work. I would like to thank Prof. G. Rajaram for her keen interest in the research work with continued encouragement, guidance, advise and supports at all stages of the work. I am thankful to Dr. N. Puviarasan, Scientist, India Meteorological Department, New Delhi, The Head, Department of Civil Engineering, IIT Bombay, Prof. B. C. Bhatt from Indian Institute of Astrophysics for providing GPS observation data. I would thank the Director, Indian Institute of Geomagnetism for providing magnetometer, ionosonde and GPS observation data of permanent stations across India. I also thank all my family members, friends and colleagues in my department as well as the institute. My special thank to Sanjay Shitole for encouraging me to prepare the report in \LaTeX ~editor.
+
+\centering{Above all, thanks the Almighty for his blessings.}
+
+\end{acknowledgments}
+
+
+\end{document}

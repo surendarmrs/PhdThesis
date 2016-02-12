@@ -1,0 +1,117 @@
+\chapter*{List of Symbols}
+\makeatletter
+%\newcommand{\tocfill}{\cleaders\hbox{$\m@th \mkern\@dotsep mu . \mkern\@dotsep mu$}\hfill}
+\makeatother
+%\newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \tocfill}}
+\newenvironment{symbols}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}
+                                              \setlength{\itemsep}{0pt}}}{\end{list}}
+\begin{symbols}
+\item[$\mu$] 	Magnetic permeability
+\item[$\varepsilon$] Relative complex dielectric constant
+\item[$\mu_0$]	Magnetic permeability of free space
+\item[$\varepsilon^{'}$]  Real part of dielectric constant  
+\item[$\varepsilon^{''}$] Imaginary part of dielectric constant
+%\item[$\varepsilon_{v}}$] Snowpack volume dielectric constant
+\item[$\kappa_e$] Volume extinction coefficient
+\item[$\kappa_{a}$] Absorption coefficient
+\item[$\kappa_{s}$]	Scattering coefficient
+\item[$\delta_{p}$] Penetration depth
+\item[$\delta R$]   Slant range resolution of SAR data
+\item[$\delta R_g$]  Ground range resolution of SAR data
+\item[$\mbox{c}$]	Speed of light
+\item[$\tau$] Pulse length of SAR signal
+\item[$\beta$]  Bandwidth of the SAR signal
+\item[$\theta$ ] 	Incidence angle or local incidence angle
+\item[$\theta_{i}$] 	Local incidence angle
+\item[$\theta_{r}$]  Local refractive angle 
+\item[$\delta A$]	Azimuth resolution of the SAR data
+\item[$L$]    SAR antenna length
+\item[$\mathbf{E}(\mathbf{r},t)$] Electric field vector
+\item[$\rho(\mathbf{r}, t)$] Volume density of free charges
+\item[$\mathbf{g}_\mathbf{E}$] Stokes vector
+\item[$g_0$] Total power of the wave
+\item[$g_1$] Power in the linear horizontal or vertical polarized components
+\item[$g_2$] Power in the linearly polarized components at tilt angles$\psi$= 45$^\circ$ or 135$^\circ$
+\item[$g_3$] Power in the left-handed and right-handed circular polarized component
+\item[$\mathbf{[J]}$]	Jones matrix
+\item[$\bm{U_2}$] Unitary matrix
+\item[$\lambda_1$, $\lambda_2$]	Non-negative real eigenvalues
+\item[$A_W$] Wave anisotropy 
+\item[$A_{p}$] Particle anisotropy
+\item[$(H_W)$] Entropy
+\item[$\mathbf{[S]}$]	Sinclair matrix
+\item[$(\bm{k})$] 3-D Pauli target vector
+\item[$\{\Psi_P\}$]	Pauli spin matrix set
+\item[$\{\Psi_L\}$]	Lexicographic matrix basis set
+\item[$\bm{\varOmega}$]	Lexicographic target vector
+\item[$\mathbf{\langle[T]\rangle}$]	Coherency matrix
+\item[$\mathbf{\langle[C]\rangle}$]	Covariance matrix
+\item[$T^{*}$]	Matrix transpose with complex conjugation
+\item[$\langle ... \rangle$]	Spatial or temporal ensemble average
+\item[$\sigma$$^\circ$]	Backscattering coefficient
+\item[$\mu\mbox{m}$]	Micrometers
+\item[$\mbox{nm}$]	Nanometers
+\item[$\sigma_{hh}^0$]	Backscattering coefficient of $\mbox{HH}$ polarization
+\item[$\sigma_{vv}^0$]	Backscattering coefficient of $\mbox{VV}$ polarization
+\item[$\sigma_{vvhh}^0$]	Correlation between $\mbox{VV}$ and $\mbox{HH}$ polarization
+\item[$\alpha_1$]	Dominant scattering magnitude
+\item[$\mathbf{\langle[T_2]\rangle}$]	$2\times2$ coherency matrix
+\item[${[\Sigma]}$]	$2\times2$ diagonal matrix
+\item[$\alpha_{IEM}$]	Scattering angle estimated from the simplified IEM model
+\item[$\nu$]	Signal frequency
+\item[$f_{hh}$]	HH-polarization scattering coefficient
+\item[$f_{vv}$]	VV-polarization scattering coefficient
+\item[$F_{hh}$]	Fresnel reflection coefficient for hh polarization
+\item[$F_{vv}$]	Fresnel reflection coefficient for vv polarization
+\item[$\rho_d$]	Dry snow density
+\item[$f_v$]	Volume scattering intensity
+\item[$\gamma_{HHVV}$]	Cross-polarization component for the dual-polarimetric coherent SAR data
+\item[$W_e$]	Effective snow wetness
+\item[$W_s(\rho_p,\varepsilon_s)$]	Snow surface wetness
+\item[$W_v(\rho_p,\varepsilon_v)$]	Snow volume wetness
+\item[$f_{s}$] Surface scattering coefficient
+\item[$f_d$] Double bounce scattering coefficient
+\item[$f_v$] Volume scattering coefficient
+\item[$f_{c}$] Helix scattering coefficient
+\item[${\left\langle\mathbf{[T]}\right\rangle_{surface}}$]	Expansion matrix for the surface scattering
+\item[${\left\langle\mathbf{[T]}\right\rangle_{double}}$]	Expansion matrix for the double bounce scattering
+\item[${\left\langle\mathbf{[T]}\right\rangle_{vol}}$]	Expansion matrix for the volume scattering
+\item[${\left\langle\mathbf{[T]}\right\rangle_{helix}}$]	Expansion matrix for the helix scattering
+\item[$P_s$]	Surface scattering power
+\item[$P_d$]	Double-bounce scattering power
+\item[$P_v$]	Volume scattering power
+\item[$P_c$]	Helix scattering power
+\item[${[S_{vol}]}$]	Volume scattering matrix
+\item[${[T(\theta)]_{vol}}$]	Volume coherency matrix
+\item[$\gamma_{HH}$]	Fresnel transmission coefficient for HH polarization
+\item[$\gamma_{VV}$]	Fresnel transmission coefficient for VV polarization
+\item[$|\gamma|^2$]	Generalized volume parameter 
+\item[$\bm{k}$]	Wave number
+\item[$W$]	Fourier transform component
+\item[$|\beta|^2$]	Generalized surface parameter
+\item[$\omega_{s}$]	Normalized surface scattering power
+\item[$\omega_{v}$]	Normalized volume scattering power
+\item[$B_{HH}$]	Bragg coefficient for HH polarization channel
+\item[$\alpha_{HH}$]	Bragg coefficient for HH polarization channel
+\item[$B_{VV}$]	Bragg coefficient for VV polarization channel
+\item[$\alpha_{VV}$]	Bragg coefficient for VV polarization channel
+\item[$\alpha_{s1}$] Dominant scattering type magnitude
+\item[${\langle[{\mathbf{T}}(\phi_1)]\rangle}$]	coherency matrix with real($\theta$) and complex($\phi_1$) unitary transformation.  
+\item[${\langle[{\mathbf{T}}(\phi_2)]\rangle}$]	coherency matrix with real($\theta$) and complex($\phi_2$) unitary transformation. 
+\item[${\langle[{\mathbf{M}}(\phi_1)]\rangle}$]	$4\times4$ Mueller matrices from ${\langle[{\mathbf{T}}(\phi_1)]\rangle}$
+\item[${\langle[{\mathbf{M}}(\phi_2)]\rangle}$]	$4\times4$ Mueller matrices from ${\langle[{\mathbf{T}}(\phi_2)]\rangle}$
+\item[$\mathbf{G_{H}^{r}}$]	Received Stokes vector for a horizontal polarization
+\item[$\mathbf{G_{V}^{r}}$]	Received Stokes vector for a vertical polarization
+\item[$m_{H}$]	DOP of a received EM wave for a horizontally (H) transmitted wave
+\item[$m_{V}$]	DOP of a received EM wave for a vertically (V) transmitted wave
+\item[$m_{E}$]	Effective DOP
+\item[$m_{E}^{\mbox{\scriptsize opt}}$]	AGU-Dop
+\item[$p_{max}$]	Touzi optimum Dop (maximum)
+\item[$p_{min}$]	Touzi optimum Dop (minimum)
+\item[$\chi_{t}^{\mbox{\scriptsize opt}}$]	Optimum polarization angles (ellipticity)
+\item[$\psi_{t}^{\mbox{\scriptsize opt}}$]	Optimum polarization angles (orientation)
+\item[$s$]	RMS surface roughness
+\item[$\lambda$]	Wavelength
+\item[$\mathbf{E_{pq}^s}$]	Scattered field
+\item[$\varepsilon_{r}$]	Snow surface dielectric constant
+\end{symbols}

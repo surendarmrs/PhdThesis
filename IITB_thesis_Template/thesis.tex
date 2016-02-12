@@ -1,0 +1,227 @@
+% thesis.tex
+%
+% This file is root file for an example thesis written using the
+% IIT Bombay LaTeX Style file.
+% Created by Amey Karkare (21 June 2007)
+%
+% It is provided without warranty on an AS IS basis.
+
+%=====================================================================
+% Read: http://www.cse.iitb.ac.in/karkare/iitbthesis/
+%    FAQ.txt     for frequently asked quetions
+%    Changes.txt for changes
+%    README      for more information
+%=====================================================================
+
+%=====================================================================
+% DOCUMENT STYLE
+%=====================================================================
+% IITB PhD Thesis format default settings are:
+%   12pt, one-sided printing on a4 size paper
+%\documentclass{iitbthesis}
+%\documentclass[a4paper,plainchapterheads,yschapters,twoside,truedoublelespace]{iitbthesis}
+\documentclass[a4paper,plainchapterheads,yschapters,twoside,truedoublelespace,openright]{iitbthesis}
+% For two-sided printing, with Chapter starting on odd-numbered pages,
+% use the following line instead:  
+%\documentclass[openright,twoside]{iitbthesis}
+%\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}
+%\cleardoublepage}}
+\setcounter{secnumdepth}{3}
+%\setcounter{tocdepth}{3}
+
+%=====================================================================
+% OPTIONAL PACKAGES
+%=====================================================================
+% To include optional packages, use the \usepackage command.
+% For e.g., The package epsfig is used to bring in the Encapsulated
+%    PostScript figures into the document.
+%    The package times is used to change the fonts to Times Roman;
+%=====================================================================
+
+\usepackage{epsfig}
+%\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}
+\usepackage{amssymb}
+\usepackage{amsmath,epsfig}
+\usepackage{graphicx,graphics}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[capitalise]{cleveref}
+\usepackage{textcomp}
+\usepackage{enumitem}
+\usepackage{natbib}
+\usepackage{float,rotating,pdflscape}
+\renewcommand\bibname{References}
+%\usepackage{acronym}
+%\usepackage{sectsty}
+%\chapterfont{\centering}
+%\chaptertitlefont{\centering}
+\usepackage{titlesec}
+%\titleformat{\chapter}[display]
+%  {\normalfont\huge\bfseries\centering}
+%  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\usepackage{bm,bbm}
+\usepackage{float,lscape}
+\usepackage{subfig}
+\DeclareMathOperator{\atan}{atan}
+\usepackage{epstopdf}
+\usepackage{tabu}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{lettrine}
+\usepackage{enumitem}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage[capitalise]{cleveref}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{mathptmx}
+\usepackage{anyfontsize}
+\usepackage{t1enc}
+\usepackage{relsize}
+\usepackage{placeins}
+\usepackage{nomencl}
+\usepackage{rotating}
+\usepackage{glossaries}
+\usepackage{scrlayer}
+\usepackage{enumitem}
+%\AtBeginDocument{\setlength\abovedisplayskip{4pt}}
+%\AtBeginDocument{\setlength\belowdisplayskip{4pt}}
+%\usepackage{enumerate}
+%=====================================================================
+%  Single counter for theorems and theorem-like environments:
+%=====================================================================
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{assertion}[theorem]{Assertion}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{figger}[theorem]{Figure}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{prop}[theorem]{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+%=====================================================================
+% End of Preamble, start of document
+%
+\begin{document}
+
+%=====================================================================
+% Include the prelude for Title page, abstract, table of contents, etc
+% You need to modify it to contain your details
+\abovedisplayskip=8mm
+\abovedisplayshortskip=8mm
+\belowdisplayskip=8mm
+\belowdisplayshortskip=8mm
+
+\include{prelude}
+\include{abbreviations}
+\include{symbols}
+\newpage
+\setlength{\parskip}{2.5mm}
+\titlespacing{\chapter}{0cm}{55mm}{10mm}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries\centering}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+  
+  \titlespacing*{\section}
+  {0pt}{8mm}{8mm}
+  \titlespacing*{\subsection}
+  {0pt}{8mm}{8mm}
+  
+\cleardoublepage\pagenumbering{arabic}
+%=====================================================================
+% Include the technical part of the report
+%%\include{chap_intro}             % Chapter 1: Introduction
+\include{chap_01_Introduction}
+\include{chap_02_Review_of_literature}
+\include{chap_03_Development_of_Algorithms_and_Methodologies}
+\include{Chap_04_Results_Discussions}
+\include{Chap_05_Summary_and_Conclusions}
+
+
+%\include{chap_06_List_of_Publications}       % Finally the summary & conclusions
+
+%=====================================================================
+% APPENDIX
+%  Appendices, if any, must precede the cited literatures.
+%  Appendices shall be numbered in Roman Capitals (e.g. Appendix IV)
+
+\appendix
+\include{Appendix_I}
+\include{Appendix_II}  
+        
+
+%=====================================================================
+% BIBLIOGRAPHY
+%   This should follow the appendices, if any, otherwise summary and
+%   conclusions chapter.
+% Choose your bibliography style
+% plain is the basic style, others include ieeetr, siam, asm, etc
+\addcontentsline{toc}{chapter}{References}
+%\bibliographystyle{ametsoc}
+
+\newpage
+\setlength{\parskip}{5mm}
+\titlespacing{\chapter}{0cm}{0mm}{0mm}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+%\bibliographystyle{pjgsm}
+\bibliographystyle{elsarticle-harv}
+% Add the bib file
+\bibliography{mybibfile}
+
+%=====================================================================
+% PUBLICATIONS
+%  publications if any may be listed after the literature cited.
+\addcontentsline{toc}{chapter}{List of Publications}
+\include{chap_06_List_of_Publications}
+
+%=====================================================================
+% ACKNOWLEDGMENTS
+%   This is the last item in the thesis. It should be signed by
+%   author, with date.
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+\newpage
+\setlength{\parskip}{5mm}
+\titlespacing{\chapter}{0cm}{0mm}{0mm}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries \centering}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+
+\begin{acknowledgments}
+\vspace{10mm}
+I wish to record a deep sense of gratitude to Prof. Avik Bhattacharya, my supervisor, for his valuable guidance and constant support at all stages of my Ph.D study and related research. I have been amazingly fortunate to have an advisor who gave me the freedom to explore on my own. His guidance helped me in all the time of research and writing of this thesis. I could not have imagined having a better advisor and mentor for my Ph.D study. His patience and support helped me overcome many crisis situations and finish this dissertation. I hope that one day I would become as good an advisor to my students as Prof. Avik Bhattacharya has been to me.
+
+My special thankfulness goes to Prof. G. venkataraman, my former co-supervisor, for his encouragement to proceed to the research work, without his support and motivation I would not have started my research career in the field of SAR polarimetry. I am also thankful to him for encouraging the use of correct grammar and consistent notation in my writings.
+
+I would like to thank Prof. Gulab Singh, my co-supervisor, for his keen interest in the research work with continued encouragement, guidance, advice and supports at all stages of the work. I am deeply grateful to him for the long discussions that helped me sort out the technical details of my work. His immense knowledge in the field of snowpack parameter studies using SAR polarimetry helped me to choose the right path to achieve the goals. 
+
+I would like to thank the other members of my research progress committee, Prof. Y. S. Rao, and Prof. Alok Porwal for their insightful comments, encouragement and the suggestion they provided at all levels of the research work. I am grateful to Prof. Yoshio Yamaguchi, Niigata University, Japan for his ideas, suggestions, helping me to understand the subject matter and enrich my ideas during this course of time.
+
+My sincere thanks also go to Dr. Snehamani, Deputy Director, Snow and Avalanche Study Establishment (SASE) under the Ministry of Defense, Government of India who provided me an opportunity to conduct the extensive field campaigns for in-situ measurements and the observatory data. Without his precious support it would not be possible to conduct this research.
+
+I thank my fellow lab mate Mr. Arun Bharathi for his complete support in-terms of coding the algorithms and development of HimSAR toolbox during this course of time. I would also like to thank Mr. Hari Ram, Mr. Gopinadh Rongali, Ms. Farjana Birajdar and Mr. Arnab Muhuri for their support to conduct the extensive field campaigns. I would like to give special thanks to Ms. Asmeet Ahluwalia, Ms. Swinky Dhingra, Mr. Shaunak De and  Mr. Siddharth Hariharan for their support to proofread my thesis. 
+
+I also would like to thank Prof. P. Venkatachalam, Former head, CSRE and Prof. B. Krishna Mohan, Head, CSRE for giving the facilities in CSRE for carried out my research work during this course of time.
+
+Most importantly, I would like to give my special thanks to my family to whom this dissertation is dedicated to. Words cannot express how grateful I am to my father, mother, sister and brother for all of the sacrifices that you’ve made on my behalf. Your prayer for me was what sustained me thus far. 
+
+Finally, I would like to thank Ministry of Human Resource Development, Government of India for provided me a fellowship to carry out my research work in IIT Bombay. I would also thank to Department of Science and Technology, Government of India for their sponsored project which supported me to procured satellite data and conduct field measurements. At finally, I should thank to the Canadian Space Agency (CSA) and MacDonald, Dettwiler and Associates Ltd (MDA) to provide us the Radarsat-2 data from 2014 under the SOAR Education International Proposal, SOAR-EI 5176.
+
+%\centering{Above all, thanks the Almighty for his blessings.}
+
+\end{acknowledgments}
+
+
+\end{document}

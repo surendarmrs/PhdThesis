@@ -1,0 +1,41 @@
+\chapter*{List of Abbreviations}
+\makeatletter
+\newcommand{\tocfill}{\cleaders\hbox{}\hfill}
+%\newcommand{\tocfill}{\cleaders\hbox{$\m@th \mkern\@dotsep mu . \mkern\@dotsep mu$}\hfill}
+\makeatother
+\newcommand{\abbrlabel}[1]{\makebox[3cm][l]{\textbf{#1}\ \tocfill}}
+\newenvironment{abbreviations}{\begin{list}{}{\renewcommand{\makelabel}{\abbrlabel}
+                                              \setlength{\itemsep}{0pt}}}{\end{list}}
+%\begin{abbreviations}[labelsep=1em,font=\bfseries]
+\begin{abbreviations}
+\item[AGU] 	Adaptive Generalized Unitary transformation
+\item[API] Application Programming Interface
+\item[BSC]	Backscattering Coefficient
+\item[SAR]  Synthetic Aperture Radar  
+\item[CTD]	Coherent Target Decomposition
+\item[DEM] Digital Elevation Model
+\item[DOP] Degree of Polarization
+\item[EM] 	Electromagnetic
+\item[FDD]	Freeman-Durden Decomposition
+\item[FSI]   Forest Survey of India
+\item[GDEM]  Global Digital Elevation Model
+\item[GUI]	Graphical User Interface
+\item[G4U] Generalized 4 component decomposition with Unitary transformation
+\item[ICTD]  Incoherent Target Decomposition
+\item[IEM] 	Integral Equation Model
+\item[IST]	Indian Standard Time
+\item[LOS]  Line of Sight
+\item[MAE] Mean Absolute Error
+\item[MFC] Microsoft Foundation Classes
+\item[MRS]	Microwave Remote Sensing
+\item[MSVC] Microsoft Visual C++.Net
+\item[NASA-JPL]	National Aeronautics and Space Administration-Jet Propulsion Laboratory
+\item[PolSAR] Polarimetric Synthetic Aperture Radar
+\item[POM]	Physical Optics Model
+\item[RMSE] Root Mean Square Error
+\item[SPM] Small Perturbation Model
+\item[SDI] Single Document Interface
+\item[SIR-C/X]	Spaceborne Imaging Radar C-band and X-band
+\item[SRTM] Shuttle Radar Topography Mission
+\item[Y4O]	Yamaguchi four component Decomposition
+\end{abbreviations}
